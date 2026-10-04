@@ -54,12 +54,22 @@
 <svg id="plan" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Planta baixa de uma residência de 112 metros quadrados">
   <defs>
     <pattern id="dots" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1.5" class="dot"/></pattern>
+    <pattern id="wood" width="180" height="52" patternUnits="userSpaceOnUse"><rect width="180" height="52" class="m-wood"/><path class="m-line" d="M0 0H180M0 26H180M70 0V26M140 26V52"/></pattern>
+    <pattern id="wood2" width="180" height="52" patternUnits="userSpaceOnUse"><rect width="180" height="52" class="m-wood2"/><path class="m-line" d="M0 0H180M0 26H180M110 0V26M40 26V52"/></pattern>
+    <pattern id="stone" width="90" height="90" patternUnits="userSpaceOnUse"><rect width="90" height="90" class="m-stone"/><path class="m-line" d="M0 0H90M0 0V90"/></pattern>
+    <pattern id="tile" width="30" height="30" patternUnits="userSpaceOnUse"><rect width="30" height="30" class="m-tile"/><path class="m-line" d="M0 0H30M0 0V30"/></pattern>
+    <pattern id="deckp" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" class="m-deck"/><path class="m-line" d="M0 0H40"/></pattern>
   </defs>
   <rect x="-3000" y="-3000" width="7600" height="7000" fill="url(#dots)"/>
 
   <!-- piso -->
   <rect class="floor" x="100" y="100" width="1020" height="800"/>
   <rect class="floor" x="980" y="100" width="520" height="420"/>
+  <!-- pisos por cômodo -->
+  <g class="mat" data-show="1"><rect x="100" y="100" width="540" height="420" fill="url(#wood)"/></g>
+  <g class="mat" data-show="2"><rect x="640" y="100" width="340" height="420" fill="url(#wood)"/><rect x="980" y="100" width="520" height="420" fill="url(#stone)"/></g>
+  <g class="mat" data-show="3"><rect x="100" y="520" width="440" height="380" fill="url(#wood)"/><rect x="540" y="520" width="220" height="380" fill="url(#tile)"/></g>
+  <g class="mat" data-show="4"><rect x="760" y="520" width="360" height="380" fill="url(#wood2)"/><rect x="1120" y="520" width="380" height="380" fill="url(#deckp)"/></g>
   <g class="rooms">
     <rect class="room" data-room="sala" x="100" y="100" width="540" height="420"/>
     <rect class="room" data-room="jantar" x="640" y="100" width="340" height="420"/>
@@ -126,7 +136,6 @@
     <circle class="f" cx="905" cy="768" r="26"/>
     <rect class="f" x="768" y="600" width="30" height="260"/><path class="f" d="M768 650H798M768 700H798M768 750H798M768 800H798"/>
     <circle class="f" cx="1070" cy="620" r="24"/><circle class="f" cx="1070" cy="870" r="20"/><circle class="f" cx="1070" cy="870" r="8"/>
-    <path class="deck" d="M1130 560H1490M1130 600H1490M1130 640H1490M1130 680H1490M1130 720H1490M1130 760H1490M1130 800H1490M1130 840H1490M1130 880H1490"/>
     <rect class="f" x="1200" y="740" width="70" height="120" rx="8"/><rect class="f" x="1200" y="740" width="70" height="30" rx="8"/>
     <rect class="f" x="1290" y="740" width="70" height="120" rx="8"/><rect class="f" x="1290" y="740" width="70" height="30" rx="8"/>
     <circle class="f" cx="1405" cy="800" r="26"/>
@@ -237,9 +246,9 @@
         <h2>Plantas que viraram casas.</h2>
       </div>
       <ul class="projects">
-        <li><b>Casa Jardim Europa</b><span>Residência unifamiliar</span><em>420 m² · 2024</em></li>
-        <li><b>Apartamento Pinheiros</b><span>Reforma completa</span><em>138 m² · 2023</em></li>
-        <li><b>Residência Cantareira</b><span>Casa de campo</span><em>310 m² · 2022</em></li>
+        <li><svg class="thumb" viewBox="0 0 120 80" aria-hidden="true"><path class="tf" d="M10 10h60v30h40v30H10z"/><path class="tw" d="M10 10h60v30h40v30H10z"/><path class="ti" d="M40 10v30M10 40h30M40 40v30M75 40v30"/><path class="td" d="M40 28a8 8 0 0 0 8-8M75 52a8 8 0 0 1-8 8"/></svg><b>Casa Jardim Europa</b><span>Residência unifamiliar</span><em>420 m² · 2024</em></li>
+        <li><svg class="thumb" viewBox="0 0 120 80" aria-hidden="true"><rect class="tf" x="10" y="12" width="100" height="56"/><rect class="tw" x="10" y="12" width="100" height="56"/><path class="ti" d="M50 12v34M10 46h70M80 46v22M80 30h30"/><path class="td" d="M50 30a8 8 0 0 1 8 8M80 56a8 8 0 0 0 8 8"/></svg><b>Apartamento Pinheiros</b><span>Reforma completa</span><em>138 m² · 2023</em></li>
+        <li><svg class="thumb" viewBox="0 0 120 80" aria-hidden="true"><rect class="tf" x="8" y="18" width="104" height="38"/><rect class="tw" x="8" y="18" width="104" height="38"/><path class="ti" d="M40 18v38M72 18v38"/><path class="ts" d="M8 56v10h104V56"/><path class="td" d="M40 36a8 8 0 0 1 8 8"/></svg><b>Residência Cantareira</b><span>Casa de campo</span><em>310 m² · 2022</em></li>
       </ul>
     </article>
   </section>
@@ -263,14 +272,14 @@
     <article class="card">
       <p class="eyebrow">Contato</p>
       <h2>Vamos desenhar o seu?</h2>
-      <p>Conte onde mora, ou onde quer morar. Respondemos em até dois dias úteis.</p>
+      <p>Conte onde mora, ou onde quer morar. Respondemos no mesmo dia, em horário comercial.</p>
       <address>
         <span>Alameda das Acácias, 420, Jardins, São Paulo</span>
-        <span>(11) 99999-0123</span>
+        <span>WhatsApp (11) 99999-0123</span>
         <span>contato@vasconcelosarq.com.br</span>
         <span>@vasconcelos.arq</span>
       </address>
-      <a class="btn" href="mailto:contato@vasconcelosarq.com.br">Agendar uma conversa</a>
+      <a class="btn" href="https://wa.me/5511999990123?text=Ol%C3%A1%2C%20vi%20o%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">Conversar no WhatsApp</a>
     </article>
   </section>
 </main>

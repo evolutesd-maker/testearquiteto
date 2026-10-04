@@ -9,4 +9,6 @@ A página inteira gira em torno de uma planta baixa em SVG fixa ao fundo. Ao rol
 - `styles.css`: tokens, tipografia e camadas
 - `script.js`: abertura com logo, câmera guiada pelo scroll, escala gráfica
 
+Pisos por cômodo (madeira, pedra, porcelanato, deck) entram na planta junto com cada etapa. O contato principal é o WhatsApp.
+
 Abrir `index.html` no navegador, sem build.
