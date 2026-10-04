@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Helena Vasconcelos Arquitetura</title>
+<meta name="description" content="Escritório de arquitetura e interiores em São Paulo. Projetos residenciais pensados cômodo a cômodo. Site modelo com dados fictícios.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Italiana&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<noscript><style>#intro{display:none}.draw{stroke-dashoffset:0!important}.fx,.lab,.cotas,.axes,.pin{opacity:1!important}html.lock{overflow:auto}</style></noscript>
+</head>
+<body>
+
+<!-- ABERTURA -->
+<div id="intro" aria-hidden="true">
+  <div class="intro-in">
+    <svg class="mark mark-lg" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2">
+      <path pathLength="1" class="m1" d="M22 50H10V10H50V50H34"/>
+      <path pathLength="1" class="m2" d="M22 50V38"/>
+      <path pathLength="1" class="m3" d="M22 38A12 12 0 0 1 34 50"/>
+    </svg>
+    <p class="intro-name">Helena Vasconcelos</p>
+    <p class="intro-sub">Arquitetura &amp; Interiores</p>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="top">
+  <a class="brand" href="#inicio" aria-label="Helena Vasconcelos Arquitetura, início">
+    <svg class="mark" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 50H10V10H50V50H34M22 50V38M22 38A12 12 0 0 1 34 50"/></svg>
+    <span>Helena Vasconcelos</span>
+  </a>
+  <nav aria-label="Principal">
+    <a href="#projetos">Projetos</a>
+    <a href="#processo">Processo</a>
+    <a href="#contato" class="nav-cta">Contato</a>
+  </nav>
+  <div class="progress" id="progress"></div>
+</header>
+
+<!-- HUD -->
+<aside class="hud" aria-hidden="true">
+  <svg class="north" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="20" cy="20" r="16"/><path d="M20 6L25 24L20 20L15 24Z" fill="currentColor"/></svg>
+  <div>
+    <div class="hud-room" id="hudRoom">Planta baixa</div>
+    <div class="hud-scale"><i id="scaleBar"></i><span id="scaleLbl">1 m</span></div>
+  </div>
+</aside>
+
+<!-- PALCO: A PLANTA -->
+<div class="stage" id="stage" data-s="0">
+<svg id="plan" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Planta baixa de uma residência de 112 metros quadrados">
+  <defs>
+    <pattern id="dots" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1.5" class="dot"/></pattern>
+  </defs>
+  <rect x="-3000" y="-3000" width="7600" height="7000" fill="url(#dots)"/>
+
+  <!-- piso -->
+  <rect class="floor" x="100" y="100" width="1020" height="800"/>
+  <rect class="floor" x="980" y="100" width="520" height="420"/>
+  <g class="rooms">
+    <rect class="room" data-room="sala" x="100" y="100" width="540" height="420"/>
+    <rect class="room" data-room="jantar" x="640" y="100" width="340" height="420"/>
+    <rect class="room" data-room="cozinha" x="980" y="100" width="520" height="420"/>
+    <rect class="room" data-room="suite" x="100" y="520" width="440" height="380"/>
+    <rect class="room" data-room="banho" x="540" y="520" width="220" height="380"/>
+    <rect class="room" data-room="escritorio" x="760" y="520" width="360" height="380"/>
+    <rect class="room deck-r" data-room="varanda" x="1120" y="520" width="380" height="380"/>
+  </g>
+
+  <!-- eixos (projeto executivo) -->
+  <g class="axes" data-show="6">
+    <path d="M100 70V940M640 70V940M980 70V940M1500 70V940M60 100H1540M60 520H1540M60 900H1540"/>
+    <g class="axlab">
+      <circle cx="100" cy="962" r="20"/><circle cx="640" cy="962" r="20"/><circle cx="980" cy="962" r="20"/><circle cx="1500" cy="962" r="20"/>
+      <circle cx="1562" cy="100" r="20"/><circle cx="1562" cy="520" r="20"/><circle cx="1562" cy="900" r="20"/>
+      <text x="100" y="968">1</text><text x="640" y="968">2</text><text x="980" y="968">3</text><text x="1500" y="968">4</text>
+      <text x="1562" y="106">A</text><text x="1562" y="526">B</text><text x="1562" y="906">C</text>
+    </g>
+  </g>
+
+  <!-- cotas (geradas em script.js) -->
+  <g class="cotas" id="cotas" data-show="5"></g>
+
+  <!-- móveis -->
+  <g class="fx" data-show="1">
+    <rect class="rug" x="170" y="170" width="270" height="170"/>
+    <rect class="f" x="200" y="114" width="200" height="26"/>
+    <rect class="f" x="240" y="215" width="130" height="70" rx="6"/>
+    <rect class="f" x="200" y="360" width="220" height="56" rx="8"/>
+    <rect class="f" x="200" y="410" width="220" height="24" rx="6"/>
+    <rect class="f" x="480" y="200" width="56" height="80" rx="10"/><rect class="f" x="528" y="200" width="16" height="80" rx="6"/>
+    <rect class="f" x="480" y="300" width="56" height="80" rx="10"/><rect class="f" x="528" y="300" width="16" height="80" rx="6"/>
+    <circle class="f" cx="590" cy="150" r="22"/><circle class="f" cx="590" cy="150" r="9"/>
+  </g>
+  <g class="fx" data-show="2">
+    <circle class="rug" cx="810" cy="310" r="100"/>
+    <rect class="f" x="730" y="255" width="160" height="110" rx="8"/>
+    <rect class="f" x="745" y="222" width="30" height="22" rx="4"/><rect class="f" x="800" y="222" width="30" height="22" rx="4"/><rect class="f" x="855" y="222" width="30" height="22" rx="4"/>
+    <rect class="f" x="745" y="376" width="30" height="22" rx="4"/><rect class="f" x="800" y="376" width="30" height="22" rx="4"/><rect class="f" x="855" y="376" width="30" height="22" rx="4"/>
+    <rect class="f" x="696" y="290" width="22" height="40" rx="4"/><rect class="f" x="902" y="290" width="22" height="40" rx="4"/>
+    <circle class="f" cx="940" cy="150" r="20"/><circle class="f" cx="940" cy="150" r="8"/>
+    <rect class="f" x="994" y="120" width="60" height="80"/><rect class="f" x="994" y="380" width="60" height="120"/>
+    <path class="f" d="M994 380H1054M994 430H1054"/>
+    <rect class="f" x="1426" y="118" width="62" height="382"/>
+    <circle class="f" cx="1445" cy="180" r="9"/><circle class="f" cx="1470" cy="180" r="9"/><circle class="f" cx="1445" cy="212" r="9"/><circle class="f" cx="1470" cy="212" r="9"/>
+    <rect class="f" x="1436" y="300" width="42" height="74" rx="6"/><circle class="f" cx="1457" cy="337" r="5"/>
+    <rect class="f" x="1150" y="250" width="250" height="80" rx="4"/>
+    <circle class="f" cx="1185" cy="364" r="16"/><circle class="f" cx="1245" cy="364" r="16"/><circle class="f" cx="1305" cy="364" r="16"/><circle class="f" cx="1365" cy="364" r="16"/>
+  </g>
+  <g class="fx" data-show="3">
+    <rect class="rug" x="180" y="700" width="290" height="190"/>
+    <rect class="f" x="240" y="740" width="170" height="150" rx="6"/>
+    <rect class="f" x="252" y="840" width="66" height="38" rx="8"/><rect class="f" x="332" y="840" width="66" height="38" rx="8"/>
+    <path class="f" d="M240 786H410"/>
+    <rect class="f" x="196" y="850" width="36" height="36"/><rect class="f" x="418" y="850" width="36" height="36"/>
+    <rect class="f" x="396" y="528" width="134" height="40"/><path class="f" d="M441 528V568M486 528V568"/>
+    <rect class="f" x="552" y="532" width="96" height="96"/><path class="f" d="M552 532L648 628"/><circle class="f" cx="600" cy="580" r="5"/>
+    <rect class="f" x="700" y="560" width="46" height="140"/><ellipse class="f" cx="723" cy="630" rx="16" ry="28"/>
+    <rect class="f" x="692" y="864" width="50" height="30" rx="4"/><ellipse class="f" cx="717" cy="832" rx="22" ry="30"/>
+  </g>
+  <g class="fx" data-show="4">
+    <rect class="f" x="810" y="812" width="190" height="70"/><rect class="f" x="880" y="830" width="50" height="32" rx="3"/>
+    <circle class="f" cx="905" cy="768" r="26"/>
+    <rect class="f" x="768" y="600" width="30" height="260"/><path class="f" d="M768 650H798M768 700H798M768 750H798M768 800H798"/>
+    <circle class="f" cx="1070" cy="620" r="24"/><circle class="f" cx="1070" cy="870" r="20"/><circle class="f" cx="1070" cy="870" r="8"/>
+    <path class="deck" d="M1130 560H1490M1130 600H1490M1130 640H1490M1130 680H1490M1130 720H1490M1130 760H1490M1130 800H1490M1130 840H1490M1130 880H1490"/>
+    <rect class="f" x="1200" y="740" width="70" height="120" rx="8"/><rect class="f" x="1200" y="740" width="70" height="30" rx="8"/>
+    <rect class="f" x="1290" y="740" width="70" height="120" rx="8"/><rect class="f" x="1290" y="740" width="70" height="30" rx="8"/>
+    <circle class="f" cx="1405" cy="800" r="26"/>
+    <circle class="f" cx="1470" cy="560" r="20"/><circle class="f" cx="1470" cy="560" r="8"/>
+    <circle class="f" cx="1470" cy="640" r="20"/><circle class="f" cx="1470" cy="640" r="8"/>
+  </g>
+
+  <!-- rótulos dos cômodos -->
+  <g class="lab" data-show="1"><text class="n" x="130" y="466">Sala de estar</text><text class="a" x="130" y="494">22,7 m²</text></g>
+  <g class="lab" data-show="2">
+    <text class="n" x="670" y="466">Jantar</text><text class="a" x="670" y="494">14,3 m²</text>
+    <text class="n" x="1090" y="466">Cozinha</text><text class="a" x="1090" y="494">21,8 m²</text>
+  </g>
+  <g class="lab" data-show="3">
+    <text class="n" x="130" y="580">Suíte</text><text class="a" x="130" y="608">16,7 m²</text>
+    <text class="n" x="566" y="824">Banho</text><text class="a" x="566" y="852">8,4 m²</text>
+  </g>
+  <g class="lab" data-show="4">
+    <text class="n" x="830" y="660">Escritório</text><text class="a" x="830" y="688">13,7 m²</text>
+    <text class="n" x="1150" y="590">Varanda</text><text class="a" x="1150" y="618">14,4 m²</text>
+  </g>
+
+  <!-- paredes -->
+  <g class="walls">
+    <path class="draw wo" pathLength="1" style="--d:.0s" d="M700 100H100V900H1120"/>
+    <path class="draw wo" pathLength="1" style="--d:.15s" d="M800 100H1500V520"/>
+    <path class="draw wi" pathLength="1" style="--d:.5s" d="M100 520H300M380 520H860M940 520H1250M1340 520H1500"/>
+    <path class="draw wi" pathLength="1" style="--d:.7s" d="M980 100V200M980 380V520"/>
+    <path class="draw wi" pathLength="1" style="--d:.8s" d="M540 520V700M540 780V900M760 520V900"/>
+    <path class="draw wi" pathLength="1" style="--d:.9s" d="M1120 520V700M1120 780V900"/>
+    <path class="draw wr" pathLength="1" style="--d:1.1s" d="M1120 900H1500V520"/>
+  </g>
+
+  <!-- janelas -->
+  <g class="win">
+    <path d="M440 100H620"/><path d="M440 100H620"/><path d="M440 100H620"/>
+    <path d="M1050 100H1400"/><path d="M1050 100H1400"/><path d="M1050 100H1400"/>
+    <path d="M100 200V420"/><path d="M100 200V420"/><path d="M100 200V420"/>
+    <path d="M100 610V820"/><path d="M100 610V820"/><path d="M100 610V820"/>
+    <path d="M880 900H1040"/><path d="M880 900H1040"/><path d="M880 900H1040"/>
+  </g>
+
+  <!-- portas -->
+  <g class="doors">
+    <path class="door door-main" d="M700 100V200M700 200A100 100 0 0 0 800 100"/>
+    <path class="door" d="M300 520V600M300 600A80 80 0 0 0 380 520"/>
+    <path class="door" d="M940 520V600M940 600A80 80 0 0 1 860 520"/>
+    <path class="door" d="M540 700H620M620 700A80 80 0 0 1 540 780"/>
+    <path class="door" d="M1250 516H1295M1295 524H1340"/>
+    <path class="door" d="M1116 700V745M1124 735V780"/>
+  </g>
+
+  <!-- entrada -->
+  <g class="pin" data-show="7">
+    <text class="pin-t" x="822" y="150">ENTRADA</text>
+    <path class="pin-a" d="M822 160H900"/>
+  </g>
+</svg>
+</div>
+
+<!-- CONTEÚDO -->
+<main id="inicio">
+
+  <section class="panel hero" data-pos="b" data-box="10,10,1580,980" data-rooms="" data-hud="Planta baixa · esc. 1:100">
+    <div class="hero-in">
+      <p class="eyebrow">Arquitetura e interiores · São Paulo</p>
+      <h1>Espaços desenhados para a vida que você leva.</h1>
+      <p class="cue"><span></span>Role para entrar na planta</p>
+    </div>
+  </section>
+
+  <section class="panel" data-pos="r" data-box="100,100,540,420" data-rooms="sala" data-hud="Sala de estar">
+    <article class="card">
+      <p class="eyebrow">Sala de estar · 22,7 m²</p>
+      <h2>Planejamos o ambiente conforme sua necessidade.</h2>
+      <p>Antes de traçar a primeira parede, ouvimos como você recebe, descansa e trabalha. A sala nasce da sua rotina, não de um catálogo.</p>
+    </article>
+  </section>
+
+  <section class="panel" data-pos="l" data-box="640,100,860,420" data-rooms="jantar,cozinha" data-hud="Jantar e cozinha">
+    <article class="card">
+      <p class="eyebrow">Jantar e cozinha · 36,1 m²</p>
+      <h2>Cada cômodo é pensado para você.</h2>
+      <p>A ilha conversa com a mesa e a passagem de pratos encurta o caminho entre o fogão e os convidados. Cada metro tem uma função e um motivo.</p>
+    </article>
+  </section>
+
+  <section class="panel" data-pos="r" data-box="100,520,660,380" data-rooms="suite,banho" data-hud="Suíte e banho">
+    <article class="card">
+      <p class="eyebrow">Suíte e banho · 25,1 m²</p>
+      <h2>Luz de manhã, silêncio à noite.</h2>
+      <p>Posicionamos a cama, a janela e o closet pela trajetória do sol e pelos ruídos do entorno. O quarto descansa antes de você.</p>
+    </article>
+  </section>
+
+  <section class="panel" data-pos="l" data-box="760,520,740,380" data-rooms="escritorio,varanda" data-hud="Escritório e varanda">
+    <article class="card">
+      <p class="eyebrow">Escritório e varanda · 28,1 m²</p>
+      <h2>Trabalhar em casa também pede projeto.</h2>
+      <p>Uma mesa de frente para a luz, estantes que seguram o ruído da circulação e uma varanda a poucos passos para respirar.</p>
+    </article>
+  </section>
+
+  <section class="panel" id="projetos" data-pos="b" data-box="10,10,1580,980" data-rooms="" data-hud="Planta completa · 112 m²">
+    <article class="card wide">
+      <div class="wide-head">
+        <p class="eyebrow">Projetos selecionados</p>
+        <h2>Plantas que viraram casas.</h2>
+      </div>
+      <ul class="projects">
+        <li><b>Casa Jardim Europa</b><span>Residência unifamiliar</span><em>420 m² · 2024</em></li>
+        <li><b>Apartamento Pinheiros</b><span>Reforma completa</span><em>138 m² · 2023</em></li>
+        <li><b>Residência Cantareira</b><span>Casa de campo</span><em>310 m² · 2022</em></li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="panel" id="processo" data-pos="b" data-box="10,10,1580,980" data-rooms="" data-hud="Projeto executivo · eixos">
+    <article class="card wide">
+      <div class="wide-head">
+        <p class="eyebrow">Como trabalhamos</p>
+        <h2>Do rabisco à chave na mão.</h2>
+      </div>
+      <ol class="steps">
+        <li><b>Conversa</b><span>Entendemos rotina, orçamento e desejos.</span></li>
+        <li><b>Estudo preliminar</b><span>Plantas e volumes para você decidir.</span></li>
+        <li><b>Projeto executivo</b><span>Detalhamento para a obra sem improviso.</span></li>
+        <li><b>Obra</b><span>Visitas semanais até a entrega.</span></li>
+      </ol>
+    </article>
+  </section>
+
+  <section class="panel" id="contato" data-pos="r" data-box="560,60,440,340" data-rooms="" data-hud="Entrada">
+    <article class="card">
+      <p class="eyebrow">Contato</p>
+      <h2>Vamos desenhar o seu?</h2>
+      <p>Conte onde mora, ou onde quer morar. Respondemos em até dois dias úteis.</p>
+      <address>
+        <span>Alameda das Acácias, 420, Jardins, São Paulo</span>
+        <span>(11) 99999-0123</span>
+        <span>contato@vasconcelosarq.com.br</span>
+        <span>@vasconcelos.arq</span>
+      </address>
+      <a class="btn" href="mailto:contato@vasconcelosarq.com.br">Agendar uma conversa</a>
+    </article>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>© 2026 Helena Vasconcelos Arquitetura</span>
+  <span>Site modelo com dados fictícios</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
