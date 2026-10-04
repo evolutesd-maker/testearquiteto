@@ -2,13 +2,12 @@
 
 Site de demonstração para um escritório de arquitetura. Todos os dados são fictícios.
 
-A página inteira gira em torno de uma planta baixa em SVG fixa ao fundo. Ao rolar, a câmera
-(o `viewBox`) viaja pela planta e novas camadas aparecem: móveis, nomes dos cômodos, cotas e eixos.
+A página gira em torno de uma maquete 3D de uma casa de 112 m², fixa ao fundo. Ao rolar, a câmera
+orbita a casa, desloca-a para o lado oposto ao texto, acende as luzes cômodo a cômodo e abaixa as
+paredes voltadas para a câmera.
 
-- `index.html`: planta em SVG e blocos de texto (`data-box` define o enquadramento, `data-pos` o lado do texto)
-- `styles.css`: tokens, tipografia e camadas
-- `script.js`: abertura com logo, câmera guiada pelo scroll, escala gráfica
+- `index.html`: estrutura e textos (`data-pos` define o lado do texto, `data-rooms` os cômodos em foco)
+- `styles.css`: tokens, tipografia e cartões
+- `script.js`: abertura com logo, maquete em Three.js (paredes, pisos, móveis, luzes) e câmera guiada pelo scroll
 
-Pisos por cômodo (madeira, pedra, porcelanato, deck) entram na planta junto com cada etapa. O contato principal é o WhatsApp.
-
-Abrir `index.html` no navegador, sem build.
+Abrir `index.html` no navegador, sem build. O Three.js (r128) vem do cdnjs, então precisa de internet.
